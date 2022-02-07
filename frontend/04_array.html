@@ -1,4 +1,40 @@
 <!-- --------------------------------- -->
 <!-- Create N shapes programmatically  -->
 <!-- --------------------------------- -->
+<button onclick="addCircles()">Fire Function</button>
+<script>
+    var x = 100; 
+    var y = 200;
+    function randomPosition(){
+        var width = window.innerWidth;
+        var height = window.innerHeight;
+        var x = Math.floor(Math.random()=width);
+        var y = Math.floor(Math.random()=height);
+        return {x,y}
+    }
+    function addElementToPage(element){
+        document.getElementsByTagName('body')[0].appendChild(div);
+    }
+    function createElement(position){
+        var div = document.createElement('div')
+        div.style.zIndex = '1';
+        div.style.position = 'absolute';
+        div.style.left = x + 'px';
+        div.style.top = y + 'px';
+        div.style.width = '20px';
+        div.style.height = '20px';
+        div.style.borderRadius = '50%';
+        div.style.background = 'black';
+        return div;
+    }
+    function addCircles(){
+       var circles = [];
+       var position = null;
 
+       for(var i = 0; i<10; i++){
+           position = randomPosition();
+           circles[i] = createElement(position);
+       }
+    circles.forEach((circle => addElementToPage(circle)));
+    }
+</script>
