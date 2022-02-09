@@ -8,6 +8,7 @@
 
 function compare(a, b) {
     // write the callback 
+    return b-a;
 }
   
 var numbers = [4,2,5,1,3];
